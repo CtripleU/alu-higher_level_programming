@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""model city module documentation"""
-
+"""
+model city module documentation
+"""
 
 from model_state import Base, State
 from sqlalchemy import Column, Integer, ForeignKey, String
