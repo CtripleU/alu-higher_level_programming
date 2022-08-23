@@ -1,5 +1,7 @@
-def add_integer(a=0, b=98):
-    """Adds two numbers and returns the sum"""
+#!/usr/bin/python3
+"""Adds two numbers and returns the sum"""
+
+def add_integer(a, b=98):
 
     if type(a) == float or type(b) == float:
         a = int(a)
