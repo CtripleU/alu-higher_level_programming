@@ -1,23 +1,24 @@
 #!/usr/bin/python3
-""" 
-Lists all State objects that contain the letter a
-from the database
-Usage: ./9-model_state_filter_a.py <mysql username> /
-                                   <mysql password> /
-                                   <database name>
 """
-import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from model_state import State
+Defines a State model.
+Inherits from SQLAlchemy Base and links to the MySQL table states.
+"""
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
+from sqlalchemy.ext.declarative import declarative_base
+from relationship_city import Base, City
 
-if __name__ == "__main__":
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                           pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
-    session = Session()
 
-    for state in session.query(State).order_by(State.id):
-        if "a" in state.name:
-            print("{}: {}".format(state.id, state.name))
+class State(Base):
+    """Represents a state for a MySQL database.
+    Attributes:
+        __tablename__ (str): The name of the MySQL table to store States.
+        id (sqlalchemy.Integer): The state's id.
+        name (sqlalchemy.String): The state's name.
+        cities (sqlalchemy.orm.relationship): The State-City relationship.
+    """
+    __tablename__ = "states"
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128), nullable=False)
+
+    cities = relationship("City", backref="state", cascade="all, delete")

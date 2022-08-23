@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Documentation"""
+"""
+Documentation
+"""
 
 
 from model_state import Base, State

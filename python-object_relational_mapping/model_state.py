@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Documentation"""
+"""
+Documentation
+"""
 
 
 from sqlalchemy import Column, Integer, String
