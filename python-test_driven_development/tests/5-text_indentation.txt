@@ -1,24 +1,54 @@
-import `text_indentation`
+import `text_indentation`:
+	>>> indent = __import__("5-text_indentation").text_indentation
 
->>> text_indentation = __import__('5-text_indentation').text_indentation
+testing for . in lines:
+	>>> indent("show. now. now.")
+	show.
+	<BLANKLINE>
+	now.
+	<BLANKLINE>
+	now.
+	<BLANKLINE>
 
->>> text_indentation()
-Traceback (most recent call last):
-TypeError: text_indentation() missing 1 required positional argument: 'text'
+testing for : in lines:
+	>>> indent("show: now: now:")
+	show:
+	<BLANKLINE>
+	now:
+	<BLANKLINE>
+	now:
+	<BLANKLINE>
 
->>> text_indentation("Holberton. School? How are you: John")
-Holberton.
+test for ? in lines:
+	>>> indent("show? now? now?")
+	show?
+	<BLANKLINE>
+	now?
+	<BLANKLINE>
+	now?
+	<BLANKLINE>
 
-School?
+test for both ? . : in lines:
+	>>> indent("For life? now: is not the time.")
+	For life?
+	<BLANKLINE>
+	now:
+	<BLANKLINE>
+	is not the time.
+	<BLANKLINE>
 
-How are you:
+testnig for wrong type:
+	>>> indent(5)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
 
-John
+testing strign with blank lines:
+	>>> indent("food is good")
+	food is good
 
->>> text_indentation(2)
-Traceback (most recent call last):
-TypeError: text must be a string
-
->>> text_indentation("\n")
-
-
+testing missing argument:
+	>>> indent()
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
