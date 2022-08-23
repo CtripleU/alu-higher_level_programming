@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Documentation"""
+"""
+Lists all City objects from the database hbtn_0e_101_usa.
+"""
 
 
 from sys import argv
