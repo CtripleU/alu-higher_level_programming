@@ -2,6 +2,7 @@
 """Adds two numbers and returns the sum"""
 
 def add_integer(a, b=98):
+    """Adds two numbers and returns the sum"""
 
     if type(a) == float or type(b) == float:
         a = int(a)
