@@ -10,6 +10,10 @@ from sqlalchemy.orm import sessionmaker
 
 
 def relationship_state():
+    """ 
+    create the State “California” with the City “San Francisco” 
+    from the database
+    """
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
                            format(argv[1],
                                   argv[2],
