@@ -15,8 +15,10 @@ How are you:
 
 John
 
->>> text_indentation(27)
+>>> text_indentation(2)
 Traceback (most recent call last):
 TypeError: text must be a string
 
 >>> text_indentation("\n")
+
+
