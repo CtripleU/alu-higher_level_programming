@@ -6,7 +6,7 @@ if (process.argv.length === 2) {
 } else {
   console.log('Arguments found');
 }
-   
+
 // function myFunction (a, b, c) {
 
 //   if (arguments.length === 0) {
