@@ -8,11 +8,11 @@ function myFunction(a, b, c) {
   } else {
       console.log('Arguments found');
   }
-  
+
 }
 
-myFunction();
+// myFunction();
 
-myFunction(1);
+// myFunction(1);
 
-myFunction(1, 2);
+// myFunction(1, 2);
